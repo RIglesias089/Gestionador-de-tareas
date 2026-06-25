@@ -112,7 +112,7 @@ public abstract class Usuario implements Autenticable {
     }
 
     @Override
-    public boolean autenticar(String email, String password) {
+    public Boolean autenticar(String email, String password) {
 
         return this.email.equals(email)
                 && this.password.equals(password);
