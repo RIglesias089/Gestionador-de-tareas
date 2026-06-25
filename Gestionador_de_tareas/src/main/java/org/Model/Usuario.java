@@ -45,5 +45,4 @@ public abstract class Usuario implements Autenticable {
     public Usuario(String idUsuario, String nombreUsuario, String email, String password, boolean premium) {
     }
 
-}
 

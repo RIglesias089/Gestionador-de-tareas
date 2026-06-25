@@ -1,21 +1,23 @@
 package org.Model;
 
-//Al trabajar con fechas implementaremos la libreria
 import java.time.LocalDate;
 
 public abstract class Evento {
+
     protected String id_evento;
     protected String nombre_evento;
     protected String descripcion;
     protected Usuario creador;
     protected LocalDate fecha;
 
-    //Hacemos el constructor
-    public Evento(String id_evento,
-    String nombre_evento,
-    String descripcion,
-    Usuario creador,
-    LocalDate fecha){
+    public Evento(
+            String id_evento,
+            String nombre_evento,
+            String descripcion,
+            Usuario creador,
+            LocalDate fecha
+    ) {
+
         this.id_evento = id_evento;
         this.nombre_evento = nombre_evento;
         this.descripcion = descripcion;
@@ -23,20 +25,19 @@ public abstract class Evento {
         this.fecha = fecha;
     }
 
-    //Planteamos los get y set de los datos
-    public String getId_evento() {
+    public String getId() {
         return id_evento;
     }
 
-    public void setId_evento(String id_evento) {
+    public void setId(String id_evento) {
         this.id_evento = id_evento;
     }
 
-    public String getNombre_evento() {
+    public String getNombre() {
         return nombre_evento;
     }
 
-    public void setNombre_evento(String nombre_evento) {
+    public void setNombre(String nombre_evento) {
         this.nombre_evento = nombre_evento;
     }
 
@@ -67,4 +68,3 @@ public abstract class Evento {
     public abstract void mostrarInformacion();
 
 }
-
