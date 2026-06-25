@@ -1,48 +1,120 @@
 package org.Model;
 
-//importamos el interface
 import org.interfaces.Autenticable;
-import java.util.List;
-import java.util.ArrayList;
 
-//Hacemos que sea una clase abstracta para que no nos de un error
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Usuario implements Autenticable {
-    //Planteamos los datos que usaremos
-    private String id;
-    private String nombre;
+
+    private String id_usuario;
+    private String nombre_usuario;
     private String email;
     private String password;
-    private Boolean premium; //esto nos serviara para poder ver si es premium o no.
+    private boolean premiun;
 
-    //Al implementar un gestor de workspace, este puede ser uno o varios y debe ser dinamico para que pueda aumentar o disminuir sin restriccion
-    private List<GestorWorkspace> workspace;
+    private List<GestorWorkspace> workspaces;
 
-    //Siempre dentro de la clase, planteamos el contructorq ue inicializara los objetos
-    public Usuario(String id, String nombre, String email, String password){
-        this.id = id;
-        this.nombre = nombre;
+    public Usuario() {}
+
+    public Usuario(
+            String id_usuario,
+            String nombre_usuario,
+            String email,
+            String password,
+            boolean premiun
+    ) {
+
+        this.id_usuario = id_usuario;
+        this.nombre_usuario = nombre_usuario;
         this.email = email;
         this.password = password;
+        this.premiun = premiun;
 
-        this.workspace = new ArrayList<>(); //el Arraylist hace una lista apoyada en un solo arreglo interno quen nos ayuda a darle dinamismo.
+        this.workspaces = new ArrayList<>();
     }
 
-    //Planteamos los Methods
-
-    //Hacemos un metodo con el cual haremos que al llamar este metodo vaya a modificar la lista de el GestorWorkspace
-    public List<GestorWorkspace> getWorkspace() {
-        return workspace;
+    public List<GestorWorkspace> getWorkspaces() {
+        return workspaces;
     }
 
-    //Hacemos un setter al gestor para que pueda recibir y guardar en el GestorWorkspace
-    public void setWorkspace(List<GestorWorkspace> workspace) {
-        this.workspace = workspace;//Aca recibira la lista y borrara el anterior y remplazara por el nuevo
+    public void setWorkspaces(List<GestorWorkspace> workspaces) {
+        this.workspaces = workspaces;
     }
 
-    //Extraemos la informacion de los objetos con getters y la modificamos la lista con los setters
-
-    // Aplicamos sobrecarga con otro constructo que nos permitira en el main podamos crear de mas de una forma un Usuario
-    public Usuario(String idUsuario, String nombreUsuario, String email, String password, boolean premium) {
+    public String getId_usuario() {
+        return id_usuario;
     }
 
+    public void setId_usuario(String id_usuario) {
+        this.id_usuario = id_usuario;
+    }
 
+    public String getNombre_usuario() {
+        return nombre_usuario;
+    }
+
+    public void setNombre_usuario(String nombre_usuario) {
+        this.nombre_usuario = nombre_usuario;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public boolean isPremiun() {
+        return premiun;
+    }
+
+    public void setPremiun(boolean premiun) {
+        this.premiun = premiun;
+    }
+
+    public abstract GestorWorkspace crearWorkspace(
+            String idWorkspace,
+            String nombreWorkspace,
+            String descripcionWorkspace
+    );
+
+    public void incluirPersonasWorkspace(
+            Usuario usuario,
+            GestorWorkspace workspace
+    ) {
+
+        if (!workspaces.contains(workspace)) {
+            System.out.println("El usuario no pertenece a este Workspace.");
+            return;
+        }
+
+        workspace.agregarUsuario(usuario);
+        System.out.println("Usuario agregado al Workspace: " + usuario.getNombre_usuario());
+    }
+
+    public void eliminarWorkspace(GestorWorkspace workspace) {
+
+        if (workspaces.remove(workspace)) {
+            System.out.println("Workspace eliminado por el usuario: " + nombre_usuario);
+        } else {
+            System.out.println("Workspace no encontrado.");
+        }
+    }
+
+    @Override
+    public boolean autenticar(String email, String password) {
+
+        return this.email.equals(email)
+                && this.password.equals(password);
+    }
+}

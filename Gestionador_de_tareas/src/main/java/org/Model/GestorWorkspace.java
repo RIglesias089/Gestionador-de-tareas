@@ -86,8 +86,8 @@ public class GestorWorkspace {
             miembros.add(usuario);
         }
 
-        if (!usuario.getWorkspace().contains(this)) {
-            usuario.getWorkspace().add(this);
+        if (!usuario.getWorkspaces().contains(this)) {
+            usuario.getWorkspaces().add(this);
         }
 
     }
@@ -125,7 +125,7 @@ public class GestorWorkspace {
         System.out.println("ID: " + id_gestor);
         System.out.println("Nombre: " + nombre_gestor);
         System.out.println("Descripcion: " + descripcion);
-        System.out.println("Creador: " + creador.getNombre_Usuario());
+        System.out.println("Creador: " + creador.getNombre_usuario());
 
         System.out.println("\n--- Miembros del gestor ---");
 
