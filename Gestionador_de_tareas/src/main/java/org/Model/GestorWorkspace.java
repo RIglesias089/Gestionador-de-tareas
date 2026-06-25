@@ -79,10 +79,11 @@ public class GestorWorkspace {
         if (!miembros.contains(usuario)){ //Hacemos uso de el contains para que recorra la lsita de miembros y vea si el usuario ya existe o no
             miembros.add(usuario); //Si este no esta incluye al usuario en miembros
         }
-        if (!usuario.getWorkspace().contains(this)){ // Buscamos hacer que si el usuario no esta en el workspace, lo agregue 
+        if (!usuario.getWorkspace().contains(this)){ // Buscamos hacer que si el usuario no esta en el workspace, lo agregue
             usuario.getWorkspace().add(this);
         }
     }
 
+    //El gestor tambien manejara la cracion, eliminacio y modificacion de eventos
 
 }
