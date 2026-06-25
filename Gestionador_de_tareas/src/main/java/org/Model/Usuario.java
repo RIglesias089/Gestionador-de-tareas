@@ -39,6 +39,8 @@ public abstract class Usuario implements Autenticable {
         this.workspace = workspace;//Aca recibira la lista y borrara el anterior y remplazara por el nuevo
     }
 
+    //Extraemos la informacion de los objetos con getters y la modificamos la lista con los setters
+
     // Aplicamos sobrecarga con otro constructo que nos permitira en el main podamos crear de mas de una forma un Usuario
     public Usuario(String idUsuario, String nombreUsuario, String email, String password, boolean premium) {
     }
