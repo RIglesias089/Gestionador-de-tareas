@@ -33,7 +33,12 @@ public abstract class Usuario implements Autenticable {
     public List<GestorWorkspace> getWorkspace() {
         return workspace;
     }
-    
+
+    //Hacemos un setter al gestor para que pueda recibir y guardar en el GestorWorkspace
+    public void setWorkspace(List<GestorWorkspace> workspace) {
+        this.workspace = workspace;//Aca recibira la lista y borrara el anterior y remplazara por el nuevo
+    }
+
     // Aplicamos sobrecarga con otro constructo que nos permitira en el main podamos crear de mas de una forma un Usuario
     public Usuario(String idUsuario, String nombreUsuario, String email, String password, boolean premium) {
     }
