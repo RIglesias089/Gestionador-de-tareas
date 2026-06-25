@@ -27,9 +27,16 @@ public abstract class Usuario implements Autenticable {
         this.workspace = new ArrayList<>(); //el Arraylist hace una lista apoyada en un solo arreglo interno quen nos ayuda a darle dinamismo.
     }
 
+    //Planteamos los Methods
+
+    //Hacemos un metodo con el cual haremos que al llamar este metodo vaya a modificar la lista de el GestorWorkspace
+    public List<GestorWorkspace> getWorkspace() {
+        return workspace;
+    }
+    
     // Aplicamos sobrecarga con otro constructo que nos permitira en el main podamos crear de mas de una forma un Usuario
     public Usuario(String idUsuario, String nombreUsuario, String email, String password, boolean premium) {
     }
+
 }
 
-//Afuera podemos empezar a plantear los methods, o metodos de dicha clase.
