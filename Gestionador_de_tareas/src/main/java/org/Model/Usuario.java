@@ -1,7 +1,9 @@
 package org.Model;
 
+//Importamos lo necesario
+import org.interfaces.Autenticable;
 
-public class Usuario {
+public abstract class Usuario implements Autenticable {
     //Planteamos los datos que usaremos
     private String id;
     private String nombre;
