@@ -64,6 +64,7 @@ public abstract class Evento {
         this.fecha = fecha;
     }
 
-    
+    public abstract void mostrarInformacion();
+
 }
 
