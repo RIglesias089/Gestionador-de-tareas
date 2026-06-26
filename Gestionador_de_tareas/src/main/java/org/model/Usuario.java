@@ -12,6 +12,7 @@ public abstract class Usuario implements Autenticable {
     private String email;
     private String password;
     private boolean premiun;
+    private String telefono;
 
     private List<GestorWorkspace> workspaces;
 
@@ -22,7 +23,8 @@ public abstract class Usuario implements Autenticable {
             String nombre_usuario,
             String email,
             String password,
-            boolean premiun
+            boolean premiun,
+            String telefono
     ) {
 
         this.id_usuario = id_usuario;
@@ -30,6 +32,7 @@ public abstract class Usuario implements Autenticable {
         this.email = email;
         this.password = password;
         this.premiun = premiun;
+        this.telefono = telefono;
 
         this.workspaces = new ArrayList<>();
     }
@@ -66,6 +69,13 @@ public abstract class Usuario implements Autenticable {
         this.email = email;
     }
 
+    public String gettelefono(){
+        return telefono;
+    }
+
+    public void settelefono(String telefono) {
+        this.telefono = telefono;
+    }
     public String getPassword() {
         return password;
     }
