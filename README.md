@@ -1,4 +1,4 @@
-# Gestionador-de--tareas
+# Gestionador-de-tareas
 ## Objetivo del proyecto
   Desarrollar una aplicacion gestionadora de tareas y recordatorios colaborativos para distintos 
   tipos de usuarios registrados, que permiten realizar acciones segun el tipo de usuario, esto sera 
