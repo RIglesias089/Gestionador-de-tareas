@@ -10,6 +10,10 @@ public class NumeroNotificacion implements NotificacionesStrategy {
         this.telefono = telefono;
     }
 
+    public NumeroNotificacion() {
+
+    }
+
     @Override
     public void enviarnotificaion(String mensaje) {
         System.out.println("Enviando SMS al número: " + this.telefono);

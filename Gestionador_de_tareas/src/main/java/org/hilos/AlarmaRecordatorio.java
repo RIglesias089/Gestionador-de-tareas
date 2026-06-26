@@ -26,7 +26,7 @@ public class AlarmaRecordatorio implements  Runnable{
             try {
                 Thread.sleep(tiempoEspera); //pone en reposo el tiempoespera por el tiempo que falte para llegar a la hora del recordatorio
             }catch (InterruptedException e){
-                Thread.currentThread().interrupt(); //si es interrumpida este tirara un mensaje de qeu fue interrumpido 
+                Thread.currentThread().interrupt(); //si es interrumpida este tirara un mensaje de qeu fue interrumpido
                 System.out.println("la alarma fue interrumpida.");
                 return;
             }
