@@ -28,14 +28,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-
-        //usuario de prueba para iniciar
-        Usuario usuarioDefault = new Usupackage org.model;
-
-public class Tarea {
-
-}
-arioPremium("1001", "jane doe", "janed@gmail.com", "000");
+        // CORREGIDO: Se limpió el fragmento intercalado erróneo
+        Usuario usuarioDefault = new UsuarioPremium("1001", "jane doe", "janed@gmail.com", "000");
         usuarios.add(usuarioDefault);
 
         boolean salir = false;
@@ -94,7 +88,6 @@ arioPremium("1001", "jane doe", "janed@gmail.com", "000");
     }
 
     private static void mostrarMenu() {
-
         System.out.println("\n=== MENU ===");
         System.out.println("Usuario actual: " + obtenerNombreUsuarioActual());
         System.out.println("1. Registrar usuario");
@@ -109,11 +102,9 @@ arioPremium("1001", "jane doe", "janed@gmail.com", "000");
         System.out.println("10. Mostrar workspace");
         System.out.println("11. Listar usuarios");
         System.out.println("0. Salir");
-
     }
 
     private static void registrarUsuario() {
-
         System.out.println("\n=== REGISTRAR USUARIO ===");
 
         String id = leerTexto("ID: ");
@@ -137,14 +128,12 @@ arioPremium("1001", "jane doe", "janed@gmail.com", "000");
     }
 
     private static void iniciarSesion() {
-
         System.out.println("\n=== INICIAR SESION ===");
 
         String email = leerTexto("Email: ");
         String password = leerTexto("Password: ");
 
         for (Usuario usuario : usuarios) {
-
             if (usuario.autenticar(email, password)) {
                 usuarioActual = usuario;
                 System.out.println("Sesion iniciada: " + usuario.getNombre_usuario());
@@ -156,7 +145,6 @@ arioPremium("1001", "jane doe", "janed@gmail.com", "000");
     }
 
     private static void crearWorkspace() {
-
         if (!haySesionActiva()) {
             return;
         }
@@ -171,7 +159,6 @@ arioPremium("1001", "jane doe", "janed@gmail.com", "000");
     }
 
     private static void incluirPersonaWorkspace() {
-
         if (!haySesionActiva()) {
             return;
         }
@@ -194,7 +181,6 @@ arioPremium("1001", "jane doe", "janed@gmail.com", "000");
     }
 
     private static void eliminarWorkspace() {
-
         if (!haySesionActiva()) {
             return;
         }
@@ -209,7 +195,6 @@ arioPremium("1001", "jane doe", "janed@gmail.com", "000");
     }
 
     private static void crearTarea() {
-
         if (!haySesionActiva()) {
             return;
         }
@@ -243,7 +228,6 @@ arioPremium("1001", "jane doe", "janed@gmail.com", "000");
     }
 
     private static void crearRecordatorio() {
-
         if (!haySesionActiva()) {
             return;
         }
@@ -276,7 +260,6 @@ arioPremium("1001", "jane doe", "janed@gmail.com", "000");
     }
 
     private static void editarEvento() {
-
         if (!haySesionActiva()) {
             return;
         }
@@ -302,7 +285,6 @@ arioPremium("1001", "jane doe", "janed@gmail.com", "000");
     }
 
     private static void eliminarEvento() {
-
         if (!haySesionActiva()) {
             return;
         }
@@ -323,7 +305,6 @@ arioPremium("1001", "jane doe", "janed@gmail.com", "000");
     }
 
     private static void mostrarWorkspace() {
-
         if (!haySesionActiva()) {
             return;
         }
@@ -341,7 +322,6 @@ arioPremium("1001", "jane doe", "janed@gmail.com", "000");
     }
 
     private static void listarUsuarios() {
-
         if (usuarios.isEmpty()) {
             System.out.println("No hay usuarios registrados.");
             return;
@@ -357,7 +337,6 @@ arioPremium("1001", "jane doe", "janed@gmail.com", "000");
     }
 
     private static void iniciarHiloAlarma(Recordatorio recordatorio) {
-
         AlarmaRecordatorio alarmaRecordatorio = new AlarmaRecordatorio(recordatorio);
         Thread hiloAlarma = new Thread(alarmaRecordatorio);
         hiloAlarma.start();
@@ -365,10 +344,10 @@ arioPremium("1001", "jane doe", "janed@gmail.com", "000");
         System.out.println("Alarma programada en segundo plano.");
     }
 
+    // Mapeo explícito para el número telefónico / SMS usando NumeroNotificacion
     private static NotificacionesStrategy seleccionarEstrategiaNotificacion() {
-
         System.out.println("\nEstrategia de notificacion:");
-        System.out.println("1. Numero");
+        System.out.println("1. Telefono (SMS)");
         System.out.println("2. Email");
 
         int opcion = leerEntero("Seleccione estrategia: ");
@@ -377,11 +356,11 @@ arioPremium("1001", "jane doe", "janed@gmail.com", "000");
             return new EmailNotificacion();
         }
 
+        // Si elige 1 (o cualquier otra opción por defecto), se usará la estrategia de Teléfono
         return new NumeroNotificacion();
     }
 
     private static GestorWorkspace seleccionarWorkspace(List<GestorWorkspace> workspaces) {
-
         if (workspaces.isEmpty()) {
             System.out.println("No hay workspaces disponibles.");
             return null;
@@ -405,7 +384,6 @@ arioPremium("1001", "jane doe", "janed@gmail.com", "000");
     }
 
     private static Usuario seleccionarUsuario() {
-
         if (usuarios.isEmpty()) {
             System.out.println("No hay usuarios registrados.");
             return null;
@@ -424,7 +402,6 @@ arioPremium("1001", "jane doe", "janed@gmail.com", "000");
     }
 
     private static Evento seleccionarEvento(GestorWorkspace workspace) {
-
         if (workspace.getEventos().isEmpty()) {
             System.out.println("No hay eventos en este Workspace.");
             return null;
@@ -443,7 +420,6 @@ arioPremium("1001", "jane doe", "janed@gmail.com", "000");
     }
 
     private static void mostrarEventos(GestorWorkspace workspace) {
-
         System.out.println("\n--- Eventos del workspace ---");
 
         if (workspace.getEventos().isEmpty()) {
@@ -459,7 +435,6 @@ arioPremium("1001", "jane doe", "janed@gmail.com", "000");
     }
 
     private static boolean haySesionActiva() {
-
         if (usuarioActual == null) {
             System.out.println("Primero registre un usuario o inicie sesion.");
             return false;
@@ -469,7 +444,6 @@ arioPremium("1001", "jane doe", "janed@gmail.com", "000");
     }
 
     private static String obtenerNombreUsuarioActual() {
-
         if (usuarioActual == null) {
             return "Ninguno";
         }
@@ -478,15 +452,12 @@ arioPremium("1001", "jane doe", "janed@gmail.com", "000");
     }
 
     private static String leerTexto(String mensaje) {
-
         System.out.print(mensaje);
         return scanner.nextLine();
     }
 
     private static int leerEntero(String mensaje) {
-
         while (true) {
-
             System.out.print(mensaje);
             String entrada = scanner.nextLine();
 
@@ -499,9 +470,7 @@ arioPremium("1001", "jane doe", "janed@gmail.com", "000");
     }
 
     private static LocalDate leerFecha(String mensaje) {
-
         while (true) {
-
             try {
                 return LocalDate.parse(leerTexto(mensaje));
             } catch (RuntimeException e) {
@@ -511,9 +480,7 @@ arioPremium("1001", "jane doe", "janed@gmail.com", "000");
     }
 
     private static LocalDateTime leerFechaHora(String mensaje) {
-
         while (true) {
-
             try {
                 return LocalDateTime.parse(leerTexto(mensaje));
             } catch (RuntimeException e) {
@@ -523,9 +490,7 @@ arioPremium("1001", "jane doe", "janed@gmail.com", "000");
     }
 
     private static Prioridad leerPrioridad() {
-
         while (true) {
-
             try {
                 return Prioridad.valueOf(
                         leerTexto("Prioridad (ALTA/MEDIA/BAJA): ").toUpperCase()
@@ -537,9 +502,7 @@ arioPremium("1001", "jane doe", "janed@gmail.com", "000");
     }
 
     private static Estado leerEstado() {
-
         while (true) {
-
             try {
                 return Estado.valueOf(
                         leerTexto("Estado (PENDIENTE/EN_PROGRESO/COMPLETADO/CANCELADA): ")
