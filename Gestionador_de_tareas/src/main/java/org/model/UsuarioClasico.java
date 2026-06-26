@@ -1,4 +1,4 @@
-package org.Model;
+package org.model;
     //Ahora usaremos herencia para que esta clase herede los atributos de la clase padre que es Usuario.java
     //Creamos el constructor para que herede la base o atributos de la clase padre
 import java.util.ArrayList;

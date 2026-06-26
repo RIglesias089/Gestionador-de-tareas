@@ -1,4 +1,4 @@
-package org.Enum;
+package org.enums;
 
 //Planteamos un enum con la prioridad porque son valores constantes que ya conocemos
 public enum Prioridad {

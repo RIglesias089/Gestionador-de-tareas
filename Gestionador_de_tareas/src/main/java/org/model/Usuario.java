@@ -1,4 +1,4 @@
-package org.Model;
+package org.model;
 
 import org.interfaces.Autenticable;
 

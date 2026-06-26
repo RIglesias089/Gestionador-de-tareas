@@ -1,4 +1,4 @@
-package org.Model;
+package org.model;
 
     //Creamos el constructor para que herede la base o atributos de la clase padre
 import java.util.ArrayList;
