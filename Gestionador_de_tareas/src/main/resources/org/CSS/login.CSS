@@ -1,62 +1,50 @@
-/* ── Fondo naranja base ── */
+/* Fondo naranja base */
 .fondo-naranja {
     -fx-background-color: #F98513;
 }
 
-/* ── Panel izquierdo (triángulos) ── */
-/* Por ahora fondo sólido, luego reemplazamos con la imagen exportada de Figma */
-.panel-triangulos {
-    -fx-background-color: #F98513;
-}
-
-/* ── Columna derecha ── */
+/* Columna derecha */
 .columna-derecha {
     -fx-background-color: transparent;
-    -fx-padding: 0 50 0 0;
+    -fx-padding: 0 40 0 0;
 }
 
-/* ── Logo ── */
+/* Logo area */
 .logo-area {
-    -fx-padding: 60 0 50 0;
+    -fx-padding: 50 0 40 0;
+    -fx-alignment: center;
 }
 
-.logo-icono {
-    -fx-font-size: 56px;
-    -fx-text-fill: #111144;
-    -fx-font-weight: bold;
-}
-
-/* Título "SnowList" tamaño 70 */
+/* Título "SnowList" */
 .titulo-principal {
     -fx-font-family: "Kurale";
     -fx-font-size: 70px;
     -fx-text-fill: #111144;
-    -fx-font-weight: bold;
 }
 
-/* Subtítulo "Tu organización" tamaño 57 */
+/* Subtítulo "Tu organización" */
 .titulo-secundario {
     -fx-font-family: "Kurale";
-    -fx-font-size: 57px;
+    -fx-font-size: 48px;
     -fx-text-fill: #111144;
 }
 
-/* ── Formulario ── */
+/* Formulario */
 .formulario-area {
-    -fx-padding: 0 0 0 0;
-    -fx-max-width: 420;
     -fx-pref-width: 420;
+    -fx-max-width: 420;
+    -fx-padding: 0 0 0 0;
 }
 
 /* Campos de texto */
 .campo-texto {
     -fx-font-family: "Kurale";
-    -fx-font-size: 32px;
+    -fx-font-size: 28px;
     -fx-background-color: #8F8F8F;
     -fx-background-radius: 40;
     -fx-text-fill: #FFFFFF;
-    -fx-prompt-text-fill: #FFFFFF;
-    -fx-pref-height: 62px;
+    -fx-prompt-text-fill: #EEEEEE;
+    -fx-pref-height: 58px;
     -fx-pref-width: 420px;
     -fx-padding: 0 24 0 24;
     -fx-border-width: 0;
@@ -64,21 +52,15 @@
     -fx-faint-focus-color: transparent;
 }
 
-.campo-texto:focused {
-    -fx-background-color: #7A7A7A;
-    -fx-background-radius: 40;
-    -fx-border-width: 0;
-    -fx-border-color: transparent;
-}
-
 /* Botón iniciar sesión */
 .boton-iniciar {
     -fx-font-family: "Kurale";
-    -fx-font-size: 32px;
+    -fx-font-size: 28px;
     -fx-background-color: #8F8F8F;
     -fx-background-radius: 40;
     -fx-text-fill: #FFFFFF;
-    -fx-pref-height: 62px;
+    -fx-pref-height: 58px;
+    -fx-pref-width: 420px;
     -fx-cursor: hand;
     -fx-border-width: 0;
 }
@@ -88,21 +70,15 @@
     -fx-background-radius: 40;
 }
 
-.boton-iniciar:pressed {
-    -fx-background-color: #6A6A6A;
-    -fx-background-radius: 40;
-}
-
-/* ── Subtextos ── */
+/* Subtextos */
 .subtexto {
     -fx-font-family: "Kurale";
-    -fx-font-size: 20px;
+    -fx-font-size: 18px;
     -fx-text-fill: #111144;
 }
 
 .link-texto {
     -fx-underline: true;
-    -fx-font-weight: bold;
     -fx-cursor: hand;
 }
 
