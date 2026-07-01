@@ -1,6 +1,5 @@
 package org;
 
-//Importamos para el uso de JavaFX
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -10,16 +9,16 @@ import javafx.scene.text.Font;
 public class App extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage stage) throws Exception {
 
-        //Cargamos la funete que usamos en el proyecto
+        // Cargamos la fuente que usamos en el proyecto
         Font.loadFont(
                 getClass().getResourceAsStream("/org/css/fonts/Kurale-Regular.ttf"), 14
         );
 
-        //Cargamos la pantalla de login
+        // Cargamos la pantalla de login
         FXMLLoader loader = new FXMLLoader(
-                getClass().getResource("/org/GUI/Login.fxml")
+                getClass().getResource("/org/GUI/login.fxml")
         );
 
         Scene scene = new Scene(loader.load(), 1280, 720);
@@ -32,7 +31,5 @@ public class App extends Application {
 
     public static void main(String[] args) {
         launch(args);
-    }
-}
     }
 }

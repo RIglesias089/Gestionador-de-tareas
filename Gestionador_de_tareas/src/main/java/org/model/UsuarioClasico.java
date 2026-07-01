@@ -12,10 +12,10 @@ import java.util.List;
                 String id_usuario,
                 String nombre_usuario,
                 String email,
-                String constrasena,
+                String contrasena,
                 boolean premiun
         ) {
-            super(id_usuario, nombre_usuario, email, constrasena, premiun);
+            super(id_usuario, nombre_usuario, email, contrasena, premiun, "");
             this.limite_grupos = 2;
         }
 

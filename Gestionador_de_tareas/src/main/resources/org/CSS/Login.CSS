@@ -67,6 +67,8 @@
 .campo-texto:focused {
     -fx-background-color: #7A7A7A;
     -fx-background-radius: 40;
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
 }
 
 /* Botón iniciar sesión */

@@ -16,7 +16,7 @@ import java.time.LocalDate;
                 String email,
                 String contrasena
         ) {
-            super(id_usuario, nombre_usuario, email, contrasena, true);
+            super(id_usuario, nombre_usuario, email, contrasena, true, "");
             this.limite_grupos = 5;
             this.fechaExpiracion = LocalDate.now().plusMonths(1);
         }
