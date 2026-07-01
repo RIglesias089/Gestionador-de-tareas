@@ -1,20 +1,39 @@
 plugins {
     id 'java'
-    // Actualizamos a la versión compatible con Gradle moderno
+    id 'application'
     id 'org.openjfx.javafxplugin' version '0.1.0'
 }
 
-group = 'com.gestion'
+group = 'org'
 version = '1.0-SNAPSHOT'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+javafx {
+    version = "17.0.2"
+    modules = ['javafx.controls', 'javafx.fxml']
+}
+
+application {
+    mainClass = 'org.Main'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+}
 
 repositories {
     mavenCentral()
-}
-
-// Configuración específica de JavaFX
-javafx {
-    version = "17.0.2" // Mantenemos la versión de JavaFX
-    modules = [ 'javafx.controls', 'javafx.fxml' ]
 }
 
 dependencies {
@@ -22,9 +41,6 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
-test {
-    useJUnitPlatform()
-}
 test {
     useJUnitPlatform()
 }
