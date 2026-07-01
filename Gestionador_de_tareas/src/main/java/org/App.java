@@ -19,7 +19,7 @@ public class App extends Application {
 
         //Cargamos la pantalla de login
         FXMLLoader loader = new FXMLLoader(
-                getClass().getResource("/org/GUI/login.fxml")
+                getClass().getResource("/org/GUI/Login.fxml")
         );
 
         Scene scene = new Scene(loader.load(), 1280, 720);
