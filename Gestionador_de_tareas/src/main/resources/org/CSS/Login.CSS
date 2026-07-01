@@ -1,0 +1,109 @@
+/* ── Fondo naranja base ── */
+.fondo-naranja {
+    -fx-background-color: #F98513;
+}
+
+/* ── Panel izquierdo (triángulos) ── */
+/* Por ahora fondo sólido, luego reemplazamos con la imagen exportada de Figma */
+.panel-triangulos {
+    -fx-background-color: #F98513;
+}
+
+/* ── Columna derecha ── */
+.columna-derecha {
+    -fx-background-color: transparent;
+    -fx-padding: 0 50 0 0;
+}
+
+/* ── Logo ── */
+.logo-area {
+    -fx-padding: 60 0 50 0;
+}
+
+.logo-icono {
+    -fx-font-size: 56px;
+    -fx-text-fill: #111144;
+    -fx-font-weight: bold;
+}
+
+/* Título "SnowList" tamaño 70 */
+.titulo-principal {
+    -fx-font-family: "Kurale";
+    -fx-font-size: 70px;
+    -fx-text-fill: #111144;
+    -fx-font-weight: bold;
+}
+
+/* Subtítulo "Tu organización" tamaño 57 */
+.titulo-secundario {
+    -fx-font-family: "Kurale";
+    -fx-font-size: 57px;
+    -fx-text-fill: #111144;
+}
+
+/* ── Formulario ── */
+.formulario-area {
+    -fx-padding: 0 0 0 0;
+    -fx-max-width: 420;
+    -fx-pref-width: 420;
+}
+
+/* Campos de texto */
+.campo-texto {
+    -fx-font-family: "Kurale";
+    -fx-font-size: 32px;
+    -fx-background-color: #8F8F8F;
+    -fx-background-radius: 40;
+    -fx-text-fill: #FFFFFF;
+    -fx-prompt-text-fill: #FFFFFF;
+    -fx-pref-height: 62px;
+    -fx-pref-width: 420px;
+    -fx-padding: 0 24 0 24;
+    -fx-border-width: 0;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.campo-texto:focused {
+    -fx-background-color: #7A7A7A;
+    -fx-background-radius: 40;
+}
+
+/* Botón iniciar sesión */
+.boton-iniciar {
+    -fx-font-family: "Kurale";
+    -fx-font-size: 32px;
+    -fx-background-color: #8F8F8F;
+    -fx-background-radius: 40;
+    -fx-text-fill: #FFFFFF;
+    -fx-pref-height: 62px;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+}
+
+.boton-iniciar:hover {
+    -fx-background-color: #7A7A7A;
+    -fx-background-radius: 40;
+}
+
+.boton-iniciar:pressed {
+    -fx-background-color: #6A6A6A;
+    -fx-background-radius: 40;
+}
+
+/* ── Subtextos ── */
+.subtexto {
+    -fx-font-family: "Kurale";
+    -fx-font-size: 20px;
+    -fx-text-fill: #111144;
+}
+
+.link-texto {
+    -fx-underline: true;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.link-texto:hover {
+    -fx-text-fill: #000033;
+}

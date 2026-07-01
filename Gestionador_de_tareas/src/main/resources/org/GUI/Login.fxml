@@ -4,24 +4,23 @@
 <?import javafx.geometry.*?>
 
 <StackPane xmlns:fx="http://javafx.com/fxml"
-           fx:controller="org.GUI.LoginController.java"
-           stylesheets="@../../css/Login.css"
+           fx:controller="org.GUI.LoginController"
+           stylesheets="@../../org/CSS/Login.CSS"
            prefWidth="1280" prefHeight="720"
            styleClass="fondo-naranja">
 
-    <!-- Contenido principal -->
     <HBox prefWidth="1280" prefHeight="720">
 
-        <!-- Columna izquierda: triángulos (fondo puro, vacío) -->
+        <!-- Columna izquierda: triángulos -->
         <Pane HBox.hgrow="ALWAYS" styleClass="panel-triangulos"/>
 
         <!-- Columna derecha: logo + formulario -->
-        <VBox alignment="TOP_CENTER" spacing="0"
+        <VBox alignment="TOP_CENTER"
               prefWidth="520"
               styleClass="columna-derecha">
 
             <!-- Logo -->
-            <VBox alignment="CENTER" spacing="8" styleClass="logo-area">
+            <VBox alignment="CENTER" styleClass="logo-area">
                 <HBox alignment="CENTER" spacing="16">
                     <Label text="✔" styleClass="logo-icono"/>
                     <VBox alignment="CENTER_LEFT" spacing="2">
@@ -44,7 +43,7 @@
 
                 <Button text="Iniciar sesión"
                         onAction="#handleLogin"
-                        styleClass="campo-texto boton-iniciar"
+                        styleClass="boton-iniciar"
                         maxWidth="Infinity"/>
 
                 <!-- Subtextos -->
