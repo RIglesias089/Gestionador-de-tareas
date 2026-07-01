@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.shape.*?>
 <?import javafx.scene.canvas.*?>
 <?import javafx.geometry.*?>
 
@@ -11,65 +10,64 @@
            prefWidth="1280" prefHeight="720"
            styleClass="fondo-naranja">
 
-    <!-- Capa de triángulos dibujada por el controller -->
     <Canvas fx:id="canvasTriangulos" width="1280" height="720"
             StackPane.alignment="TOP_LEFT"/>
 
-    <!-- Contenido principal -->
-    <HBox prefWidth="1280" prefHeight="720">
+    <HBox prefWidth="1280" prefHeight="720" alignment="CENTER_RIGHT">
 
-        <!-- Columna izquierda vacía (triángulos van en el canvas) -->
         <Pane HBox.hgrow="ALWAYS"/>
 
-        <!-- Columna derecha: logo + formulario -->
-        <VBox alignment="TOP_CENTER"
-              prefWidth="500" minWidth="500" maxWidth="500"
-              styleClass="columna-derecha">
+        <VBox alignment="CENTER" prefWidth="550" minWidth="550" maxWidth="550" styleClass="columna-derecha">
 
-            <!-- Logo -->
-            <VBox alignment="CENTER" styleClass="logo-area">
-                <HBox alignment="CENTER" spacing="20">
-                    <Canvas fx:id="canvasCheck" width="90" height="90"/>
-                    <VBox alignment="CENTER_LEFT" spacing="0">
-                        <Label text="SnowList" styleClass="titulo-principal"/>
-                        <Label text="Tu organización" styleClass="titulo-secundario"/>
-                    </VBox>
-                </HBox>
-            </VBox>
+            <VBox alignment="TOP_CENTER" spacing="25" styleClass="card-formulario">
 
-            <!-- Formulario -->
-            <VBox alignment="CENTER" spacing="18" styleClass="formulario-area">
-
-                <TextField fx:id="campoCorreo"
-                           promptText="Ingresa tu correo"
-                           styleClass="campo-texto"/>
-
-                <PasswordField fx:id="campoContrasena"
-                               promptText="Ingresa tu contraseña"
-                               styleClass="campo-texto"/>
-
-                <Button text="Iniciar sesión"
-                        onAction="#handleLogin"
-                        styleClass="boton-iniciar"
-                        maxWidth="Infinity"/>
-
-                <VBox alignment="CENTER" spacing="4">
-                    <HBox alignment="CENTER" spacing="4">
-                        <Label text="¿Olvidaste tu contraseña? Ve a " styleClass="subtexto"/>
-                        <Label text="Recuperar contraseña"
-                               styleClass="subtexto link-texto"
-                               onMouseClicked="#handleRecuperar"/>
-                    </HBox>
-                    <HBox alignment="CENTER" spacing="4">
-                        <Label text="No tienes una cuenta. Ve a " styleClass="subtexto"/>
-                        <Label text="crear cuenta"
-                               styleClass="subtexto link-texto"
-                               onMouseClicked="#handleCrearCuenta"/>
+                <VBox alignment="CENTER" styleClass="logo-area" spacing="10">
+                    <HBox alignment="CENTER" spacing="15">
+                        <Canvas fx:id="canvasCheck" width="65" height="65"/>
+                        <VBox alignment="CENTER_LEFT">
+                            <Label text="SnowList" styleClass="titulo-principal"/>
+                            <Label text="Tu organización" styleClass="titulo-secundario"/>
+                        </VBox>
                     </HBox>
                 </VBox>
 
+                <VBox alignment="CENTER" spacing="20" styleClass="formulario-area">
+
+                    <VBox spacing="5" alignment="CENTER_LEFT">
+                        <Label text="Correo electrónico" styleClass="label-input"/>
+                        <TextField fx:id="campoCorreo"
+                                   promptText="Ingresa tu correo"
+                                   styleClass="campo-texto"/>
+                    </VBox>
+
+                    <VBox spacing="5" alignment="CENTER_LEFT">
+                        <Label text="Contraseña" styleClass="label-input"/>
+                        <PasswordField fx:id="campoContrasena"
+                                       promptText="Ingresa tu contraseña"
+                                       styleClass="campo-texto"/>
+                    </VBox>
+
+                    <Button text="Iniciar sesión"
+                            onAction="#handleLogin"
+                            styleClass="boton-iniciar"
+                            maxWidth="Infinity"/>
+
+                    <VBox alignment="CENTER" spacing="8" styleClass="links-contenedor">
+                        <HBox alignment="CENTER" spacing="4">
+                            <Label text="¿Olvidaste tu contraseña? Ve a " styleClass="subtexto"/>
+                            <Label text="Recuperar contraseña"
+                                   styleClass="subtexto link-texto"
+                                   onMouseClicked="#handleRecuperar"/>
+                        </HBox>
+                        <HBox alignment="CENTER" spacing="4">
+                            <Label text="No tienes una cuenta. Ve a " styleClass="subtexto"/>
+                            <Label text="crear cuenta"
+                                   styleClass="subtexto link-texto"
+                                   onMouseClicked="#handleCrearCuenta"/>
+                        </HBox>
+                    </VBox>
+                </VBox>
             </VBox>
         </VBox>
     </HBox>
-
 </StackPane>
